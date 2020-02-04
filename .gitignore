@@ -24,3 +24,4 @@
 # Project exclude paths
 /log/
 /tmp/
+/.idea/
