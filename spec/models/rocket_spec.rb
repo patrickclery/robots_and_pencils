@@ -6,12 +6,18 @@ RSpec.describe Rocket, type: :model do
   end
 
   context 'schema' do
-    it { should have_db_column(:has_reused_core).of_type(:boolean).with_options(null: false) }
     it { should have_db_column(:name).of_type(:string).with_options(null: false) }
     # Rather than use "rocket_id" I decided to use "reference_number" ("reference" is also a reserved word) since a column like "rocket_id" could be confusing and against "the Rails Way"
     it { should have_db_column(:reference_number).of_type(:string).with_options(null: false, unique: true) }
-    it { should have_db_column(:type).of_type(:string).with_options(null: false) }
+    it { should have_db_column(:type_name).of_type(:string).with_options(null: false) }
     # If any of the "cores" are reused, mark it as reused
+  end
+
+  context 'validations' do
+    subject { create(:rocket) }
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:type_name) }
+    it { should validate_uniqueness_of(:reference_number).presence }
   end
 
 end

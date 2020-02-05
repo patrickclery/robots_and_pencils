@@ -18,14 +18,14 @@ ActiveRecord::Schema.define(version: 2020_02_04_203218) do
   create_table "rockets", force: :cascade do |t|
     t.string "reference_number", null: false, unique: true
     t.string "name", null: false
-    t.string "type", null: false
-    t.boolean "has_reused_core", null: false
+    t.string "type_name", null: false
   end
 
   create_table "flights", force: :cascade do |t|
     t.bigint "reference_number", null: false, unique: true
-    t.text "details", null: false
+    t.text "details", null: true
     t.boolean "launch_successful", null: false
+    t.boolean "is_reused", null: false
     t.datetime "local_launched_at", null: false
     t.json "links", null: false
     t.bigint "rocket_id", null: false
