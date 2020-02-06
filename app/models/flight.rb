@@ -2,6 +2,8 @@ class Flight < ApplicationRecord
   belongs_to :rocket, foreign_key: :rocket_id, required: true
 
   # These scopes are meant to be used to filter results for the API
+  # NOTE: "with_" is a reserved keyword by ActiveRecord when combining scopes,
+  # so I opted for "filter_" instead of "with_"
   scope :filter_reddit_links, -> {
     # Rails uses the WRONG operator (!=) with JSONB in PostgreSQL, and therefore raw SQL is necessary
     conditions = <<SQL

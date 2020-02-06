@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :flight do
-    reference_number { Faker::Number.number(digits: 3) }
+    reference_number { Faker::Number.unique.number(digits: 4) }
     details { Faker::Lorem.sentence }
     launch_successful { Faker::Boolean.boolean }
     is_reused { Faker::Boolean.boolean }
