@@ -4,31 +4,31 @@ RSpec.describe Flight, type: :model do
     it { should belong_to(:rocket).with_foreign_key(:rocket_id) }
 
     # These are scopes that are used by the controller to filter the list
-    describe ".with_reddit_links" do
-      subject { Flight.with_reddit_links.all }
+    describe ".filter_reddit_links" do
+      subject { Flight.filter_reddit_links.all }
       let!(:flights) { create_list(:flight, 3) }
-      let!(:flights_with_reddit_links) { create_list(:flight, 5, :with_reddit_links) }
+      let!(:flights_filter_reddit_links) { create_list(:flight, 5, :with_reddit_links) }
 
-      it { expect(Flight).to respond_to(:with_reddit_links) }
-      it { should contain_exactly(*flights_with_reddit_links) }
+      it { expect(Flight).to respond_to(:filter_reddit_links) }
+      it { should contain_exactly(*flights_filter_reddit_links) }
     end
 
-    describe ".with_successful_launches" do
-      subject { Flight.with_successful_launches.all }
+    describe ".filter_successful_launches" do
+      subject { Flight.filter_successful_launches.all }
       let!(:flights) { create_list(:flight, 4, launch_successful: false) }
-      let!(:flights_with_successful_launches) { create_list(:flight, 6, launch_successful: true) }
+      let!(:flights_filter_successful_launches) { create_list(:flight, 6, launch_successful: true) }
 
-      it { expect(Flight).to respond_to(:with_successful_launches) }
-      it { should contain_exactly(*flights_with_successful_launches) }
+      it { expect(Flight).to respond_to(:filter_successful_launches) }
+      it { should contain_exactly(*flights_filter_successful_launches) }
     end
 
-    describe ".with_reuses" do
-      subject { Flight.with_reuses.all }
+    describe ".filter_reuses" do
+      subject { Flight.filter_reuses.all }
       let!(:flights) { create_list(:flight, 2, is_reused: false) }
-      let!(:flights_with_reuses) { create_list(:flight, 4, is_reused: true) }
+      let!(:flights_filter_reuses) { create_list(:flight, 4, is_reused: true) }
 
-      it { expect(Flight).to respond_to(:with_reuses) }
-      it { should contain_exactly(*flights_with_reuses) }
+      it { expect(Flight).to respond_to(:filter_reuses) }
+      it { should contain_exactly(*flights_filter_reuses) }
     end
 
   end
