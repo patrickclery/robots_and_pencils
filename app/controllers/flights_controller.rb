@@ -2,9 +2,9 @@ class FlightsController < ApplicationController
 
   def index
     @flights = Flight.all
-    @flights = @flights.with_reddit_links if filter_params[:with_reddit_links].present?
-    @flights = @flights.with_successful_launches if filter_params[:with_successful_launches].present?
-    @flights = @flights.with_reuses if filter_params[:with_reuses].present?
+    @flights = @flights.filter_reddit_links if params[:with_reddit_links].present?
+    @flights = @flights.filter_successful_launches if params[:with_successful_launches].present?
+    @flights = @flights.filter_reuses if params[:with_reuses].present?
 
     render json: @flights
   end

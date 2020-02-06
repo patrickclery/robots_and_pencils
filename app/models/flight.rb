@@ -7,10 +7,10 @@ class Flight < ApplicationRecord
   scope :filter_reddit_links, -> {
     # Rails uses the WRONG operator (!=) with JSONB in PostgreSQL, and therefore raw SQL is necessary
     conditions = <<SQL
-      links->>'reddit_campaign' <> '' OR
-      links->>'reddit_launch' <> '' OR
-      links->>'reddit_recovery' <> '' OR
-      links->>'reddit_media' <> ''
+      ("links"->>'reddit_campaign' <> '' OR
+      "links"->>'reddit_launch' <> '' OR
+      "links"->>'reddit_recovery' <> '' OR
+      "links"->>'reddit_media' <> '')
 SQL
     where(conditions)
   }
