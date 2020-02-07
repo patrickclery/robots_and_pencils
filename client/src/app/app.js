@@ -8,10 +8,6 @@ class App extends Component {
 				<h1>SpaceX Launches</h1>
 			</div>
 
-			<div class="rectangle">
-
-			</div>
-
 		)
 	}
 }
