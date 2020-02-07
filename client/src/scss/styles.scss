@@ -1,7 +1,408 @@
-h1 {
-	text-align: center;
+.apple-space-background-006 {
+  position: absolute;
+  width: 1946px;
+  height: 1216px;
+
+  background: url(Image.png);
 }
 
-.container {
+.space-x-launches {
+  position: absolute;
+  width: 1091.85px;
+  height: 77px;
 
+  font-family: Geomanist;
+  font-size: 64px;
+  line-height: 75px;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+.rectangle {
+  position: absolute;
+  width: 956px;
+  height: 861px;
+
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.453012);
+  box-sizing: border-box;
+  box-shadow: 0px 2px 130px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.rectangle {
+  position: absolute;
+  width: 956px;
+  height: 784px;
+
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.84) 32.59%, #C2C2C2 100%);
+}
+
+.rectangle {
+  position: absolute;
+  width: 956px;
+  height: 49px;
+
+  background: rgba(255, 255, 255, 0.843495);
+  box-shadow: 0px 2px 10px rgba(8, 13, 35, 0.366027);
+}
+
+.line-3 {
+  position: absolute;
+  width: 959px;
+  height: 2px;
+
+  mix-blend-mode: normal;
+  opacity: 0.26;
+  border: 2px solid #141C3A;
+}
+
+.rectangle-2 {
+  position: absolute;
+  width: 80px;
+  height: 35px;
+
+  border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 100px;
+}
+
+.header .share {
+  position: absolute;
+  width: 52.53px;
+  height: 15.15px;
+
+  font-family: Geomanist;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+.header .id {
+  position: absolute;
+  width: 52.53px;
+  height: 36px;
+
+  font-family: Geomanist;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+
+  color: #043D67;
+}
+
+.header .article {
+  position: absolute;
+  width: 52.53px;
+  height: 36px;
+
+  font-family: Geomanist;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+
+  color: #043D67;
+}
+
+.header .badge {
+  position: absolute;
+  width: 52.53px;
+  height: 36px;
+
+  font-family: Geomanist;
+  font-size: 17px;
+  line-height: 20px;
+
+  color: #043D67;
+}
+
+.header .rocket-name {
+  position: absolute;
+  width: 102.55px;
+  height: 36px;
+
+  font-family: Geomanist;
+  font-size: 17px;
+  line-height: 20px;
+
+  color: #043D67;
+}
+
+.header .launch-date {
+  position: absolute;
+  width: 102.55px;
+  height: 36px;
+
+  font-family: Geomanist;
+  font-size: 17px;
+  line-height: 20px;
+
+  color: #043D67;
+}
+
+.header .details {
+  position: absolute;
+  width: 102.55px;
+  height: 36px;
+
+  font-family: Geomanist;
+  font-size: 17px;
+  line-height: 20px;
+
+  color: #043D67;
+}
+
+.header .rocket-type {
+  position: absolute;
+  width: 102.55px;
+  height: 36px;
+
+  font-family: Geomanist;
+  font-size: 17px;
+  line-height: 20px;
+
+  color: #043D67;
+}
+
+.header .land-success {
+  position: absolute;
+  width: 102.55px;
+  height: 15.15px;
+
+  font-family: Geomanist;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+.header .x {
+  position: absolute;
+  width: 9.95px;
+  height: 17.24px;
+
+  font-family: Geomanist;
+  font-size: 19px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+
+  color: #16B3FF;
+}
+
+.line-2 {
+  position: absolute;
+  width: 2px;
+  height: 24px;
+
+  border: 2px solid #FFFFFF;
+}
+
+.row {
+  position: absolute;
+  width: 956px;
+  height: 77.27px;
+}
+
+}
+
+.row .link {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+}
+
+.row .shape {
+  position: absolute;
+  width: 20.58px;
+  height: 20.81px;
+
+  background: #444444;
+}
+
+.row .path {
+  position: absolute;
+  width: 13.95px;
+  height: 15.26px;
+
+  background: #DADADA;
+}
+
+.row .path {
+  position: absolute;
+  width: 13.95px;
+  height: 15.26px;
+
+  background: #DADADA;
+}
+
+.row .rocket-name {
+  position: absolute;
+  width: 102.59px;
+  height: 20.96px;
+
+  font-family: Geomanist;
+  font-size: 15px;
+  line-height: 18px;
+
+  color: #444444;
+}
+
+.row .rocket-type {
+  position: absolute;
+  width: 102.59px;
+  height: 20.96px;
+
+  font-family: Geomanist;
+  font-size: 15px;
+  line-height: 18px;
+
+  color: #444444;
+}
+
+.row .x {
+  position: absolute;
+  width: 33.23px;
+  height: 20.96px;
+
+  font-family: Geomanist;
+  font-size: 15px;
+  line-height: 18px;
+
+  color: #444444;
+}
+
+.row .launch-date {
+  position: absolute;
+  width: 102.59px;
+  height: 20.96px;
+
+  font-family: Geomanist;
+  font-size: 15px;
+  line-height: 18px;
+
+  color: #444444;
+}
+
+.row .lorem-ipsum-dolor-si {
+  position: absolute;
+  width: 326.22px;
+  height: 20.96px;
+
+  font-family: Geomanist;
+  font-size: 15px;
+  line-height: 18px;
+
+  color: #444444;
+}
+
+.row .line-4 {
+  position: absolute;
+  width: 956px;
+  height: 2.27px;
+
+  border: 1px solid #FFFFFF;
+}
+
+.row .placeholder {
+  position: absolute;
+  width: 86.09px;
+  height: 65.13px;
+
+  background: url(Image.png);
+}
+
+.refresh-group .refresh-group {
+  position: absolute;
+  width: 35px;
+  height: 36px;
+}
+
+.refresh-group .oval {
+  position: absolute;
+  width: 34.72px;
+  height: 35.48px;
+
+  border: 2px solid #FFFFFF;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.186481);
+}
+
+.refresh-group .refresh {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+}
+
+.refresh-group .shape {
+  position: absolute;
+  width: 13.79px;
+  height: 19.3px;
+
+  background: #FFFFFF;
+}
+
+.refresh-group .path {
+  position: absolute;
+  width: 10.34px;
+  height: 13.39px;
+
+  background: #DADADA;
+}
+
+.refresh-group .path {
+  position: absolute;
+  width: 10.34px;
+  height: 13.39px;
+
+  background: #DADADA;
+}
+
+.refresh-group .shape {
+  position: absolute;
+  width: 20.43px;
+  height: 20.87px;
+}
+
+.share-group {
+  position: absolute;
+  width: 34.72px;
+  height: 35.48px;
+}
+
+.share-group .oval {
+  position: absolute;
+  width: 34.72px;
+  height: 35.48px;
+
+  border: 2px solid #FFFFFF;
+  box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.186481);
+}
+
+.share-group .line {
+  position: absolute;
+  width: 4.6px;
+  height: 2px;
+
+  border: 2px solid #EDEDED;
+}
+
+.share-group .line {
+  position: absolute;
+  width: 12.26px;
+  height: 2px;
+
+  border: 2px solid #EDEDED;
+}
+
+.share-group .line {
+  position: absolute;
+  width: 19.91px;
+  height: 2px;
+
+  border: 2px solid #EDEDED;
 }
