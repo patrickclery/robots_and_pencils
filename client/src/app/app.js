@@ -7,6 +7,11 @@ class App extends Component {
 			<div id="app" className="page-wrapper">
 				<h1>SpaceX Launches</h1>
 			</div>
+
+			<div class="rectangle">
+
+			</div>
+
 		)
 	}
 }
