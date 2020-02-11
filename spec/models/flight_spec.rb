@@ -4,7 +4,7 @@ RSpec.describe Flight, type: :model do
     it { should belong_to(:rocket).with_foreign_key(:rocket_id) }
 
     # These are scopes that are used by the controller to filter the list
-    describe ".filter_reddit_links" do
+    describe "#filter_reddit_links" do
       subject { Flight.filter_reddit_links.all }
       let!(:flights) { create_list(:flight, 3) }
       let!(:flights_filter_reddit_links) { create_list(:flight, 5, :with_reddit_links) }
@@ -13,7 +13,7 @@ RSpec.describe Flight, type: :model do
       it { should contain_exactly(*flights_filter_reddit_links) }
     end
 
-    describe ".filter_successful_launches" do
+    describe "#filter_successful_launches" do
       subject { Flight.filter_successful_launches.all }
       let!(:flights) { create_list(:flight, 4, launch_successful: false) }
       let!(:flights_filter_successful_launches) { create_list(:flight, 6, launch_successful: true) }
@@ -22,13 +22,20 @@ RSpec.describe Flight, type: :model do
       it { should contain_exactly(*flights_filter_successful_launches) }
     end
 
-    describe ".filter_reuses" do
+    describe "#filter_reuses" do
       subject { Flight.filter_reuses.all }
       let!(:flights) { create_list(:flight, 2, is_reused: false) }
       let!(:flights_filter_reuses) { create_list(:flight, 4, is_reused: true) }
 
       it { expect(Flight).to respond_to(:filter_reuses) }
       it { should contain_exactly(*flights_filter_reuses) }
+    end
+
+    describe ".rocket_name" do
+      it { should delegate_method(:rocket_name).to(:rocket) }
+    end
+    describe ".rocket_name" do
+      it { should delegate_method(:rocket_type).to(:rocket) }
     end
 
   end
@@ -57,8 +64,8 @@ RSpec.describe Flight, type: :model do
 
   context 'validations' do
     subject { create(:flight) }
-    it { should validate_inclusion_of(:is_reused).in_array([true,false]).presence }
-    it { should validate_inclusion_of(:launch_successful).in_array([true,false]).presence }
+    it { should validate_inclusion_of(:is_reused).in_array([true, false]).presence }
+    it { should validate_inclusion_of(:launch_successful).in_array([true, false]).presence }
     it { should validate_presence_of(:links) }
     it { should validate_presence_of(:local_launched_at) }
     it { should validate_presence_of(:rocket) }

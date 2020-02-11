@@ -1,5 +1,7 @@
 class Flight < ApplicationRecord
   belongs_to :rocket, foreign_key: :rocket_id, required: true
+  delegate :rocket_name, to: :rocket
+  delegate :rocket_type, to: :rocket
 
   # These scopes are meant to be used to filter results for the API
   # NOTE: "with_" is a reserved keyword by ActiveRecord when combining scopes,
