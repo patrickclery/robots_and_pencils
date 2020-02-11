@@ -6,7 +6,7 @@ class FlightsController < ApplicationController
     @flights = @flights.filter_successful_launches if params[:with_successful_launches].present?
     @flights = @flights.filter_reuses if params[:with_reuses].present?
 
-    render json: @flights
+    render json: FlightSerializer.new(@flights)
   end
 
   private
