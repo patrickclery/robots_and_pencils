@@ -3,6 +3,10 @@ RSpec.describe Rocket, type: :model do
   context 'associations' do
     # Don't allow a rocket to be destroyed if any flights depend on it
     it { should have_many(:flights).dependent(:restrict_with_exception) }
+
+    # Test aliases
+    it { expect(subject.rocket_name).to eq subject.name }
+    it { expect(subject.rocket_type).to eq subject.type_name }
   end
 
   context 'schema' do
