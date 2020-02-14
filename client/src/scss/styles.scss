@@ -1,56 +1,48 @@
-.apple-space-background-006 {
-  position: absolute;
-  width: 1946px;
-  height: 1216px;
-
-  background: url(Image.png);
+.app--space-theme {
+  background: url(../assets/images/background.jpg);
 }
 
-.space-x-launches {
-  position: absolute;
-  width: 1091.85px;
-  height: 77px;
-
+.heading--h1 {
+  width: 960px;
+  color: #FFFFFF;
   font-family: Geomanist;
   font-size: 64px;
   line-height: 75px;
+  padding: 25px 0 25px 0;
   text-align: center;
-
-  color: #FFFFFF;
 }
 
-.rectangle {
-  position: absolute;
-  width: 956px;
-  height: 861px;
-
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.453012);
-  box-sizing: border-box;
-  box-shadow: 0px 2px 130px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-}
-
-.rectangle {
-  position: absolute;
-  width: 956px;
-  height: 784px;
-
+.flights__grid {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.84) 32.59%, #C2C2C2 100%);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.453012);
+  box-shadow: 0 2px 130px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  grid-template-columns: 100px 100px 100px 100px minmax(100px, auto) 100px 100px;
+  margin: 0 auto;
+  width: 960px;
 }
 
-.rectangle {
-  position: absolute;
-  width: 956px;
-  height: 49px;
-
+.flights__headers {
   background: rgba(255, 255, 255, 0.843495);
   box-shadow: 0px 2px 10px rgba(8, 13, 35, 0.366027);
+  display: grid;
+  grid-template-columns: inherit;
 }
 
-.line-3 {
-  position: absolute;
-  width: 959px;
+.flights__headers__th {
+  font-family: Geomanist;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 17px;
+  color: #043D67;
+  display: grid;
+  align-items: center;
+  padding: 5px;
+}
+
+.flights__line {
   height: 2px;
 
   mix-blend-mode: normal;
@@ -58,8 +50,7 @@
   border: 2px solid #141C3A;
 }
 
-.rectangle-2 {
-  position: absolute;
+.share-text {
   width: 80px;
   height: 35px;
 
@@ -69,7 +60,6 @@
 }
 
 .header .share {
-  position: absolute;
   width: 52.53px;
   height: 15.15px;
 
@@ -82,7 +72,6 @@
 }
 
 .header .id {
-  position: absolute;
   width: 52.53px;
   height: 36px;
 
@@ -95,7 +84,6 @@
 }
 
 .header .article {
-  position: absolute;
   width: 52.53px;
   height: 36px;
 
@@ -108,7 +96,6 @@
 }
 
 .header .badge {
-  position: absolute;
   width: 52.53px;
   height: 36px;
 
@@ -120,7 +107,6 @@
 }
 
 .header .rocket-name {
-  position: absolute;
   width: 102.55px;
   height: 36px;
 
@@ -132,7 +118,6 @@
 }
 
 .header .launch-date {
-  position: absolute;
   width: 102.55px;
   height: 36px;
 
@@ -144,7 +129,6 @@
 }
 
 .header .details {
-  position: absolute;
   width: 102.55px;
   height: 36px;
 
@@ -156,7 +140,6 @@
 }
 
 .header .rocket-type {
-  position: absolute;
   width: 102.55px;
   height: 36px;
 
@@ -168,7 +151,6 @@
 }
 
 .header .land-success {
-  position: absolute;
   width: 102.55px;
   height: 15.15px;
 
@@ -181,7 +163,6 @@
 }
 
 .header .x {
-  position: absolute;
   width: 9.95px;
   height: 17.24px;
 
@@ -195,8 +176,7 @@
   color: #16B3FF;
 }
 
-.line-2 {
-  position: absolute;
+.vertical-line {
   width: 2px;
   height: 24px;
 
@@ -204,45 +184,30 @@
 }
 
 .row {
-  position: absolute;
   width: 956px;
   height: 77.27px;
 }
 
-}
-
-.row .link {
-  position: absolute;
+.row__link {
   width: 21px;
   height: 21px;
 }
 
-.row .shape {
-  position: absolute;
+.row__shape {
   width: 20.58px;
   height: 20.81px;
 
   background: #444444;
 }
 
-.row .path {
-  position: absolute;
+.row__path {
   width: 13.95px;
   height: 15.26px;
 
   background: #DADADA;
 }
 
-.row .path {
-  position: absolute;
-  width: 13.95px;
-  height: 15.26px;
-
-  background: #DADADA;
-}
-
-.row .rocket-name {
-  position: absolute;
+.row__rocket-name {
   width: 102.59px;
   height: 20.96px;
 
@@ -253,8 +218,7 @@
   color: #444444;
 }
 
-.row .rocket-type {
-  position: absolute;
+.row__rocket-type {
   width: 102.59px;
   height: 20.96px;
 
@@ -265,8 +229,7 @@
   color: #444444;
 }
 
-.row .x {
-  position: absolute;
+.row__x {
   width: 33.23px;
   height: 20.96px;
 
@@ -277,8 +240,7 @@
   color: #444444;
 }
 
-.row .launch-date {
-  position: absolute;
+.row__launch-date {
   width: 102.59px;
   height: 20.96px;
 
@@ -289,8 +251,7 @@
   color: #444444;
 }
 
-.row .lorem-ipsum-dolor-si {
-  position: absolute;
+.row__details {
   width: 326.22px;
   height: 20.96px;
 
@@ -301,30 +262,26 @@
   color: #444444;
 }
 
-.row .line-4 {
-  position: absolute;
+.row__line-4 {
   width: 956px;
   height: 2.27px;
 
   border: 1px solid #FFFFFF;
 }
 
-.row .placeholder {
-  position: absolute;
+.row__placeholder {
   width: 86.09px;
   height: 65.13px;
 
-  background: url(Image.png);
+  background: url(../assets/images/placeholder.png);
 }
 
-.refresh-group .refresh-group {
-  position: absolute;
+.refresh-group {
   width: 35px;
   height: 36px;
 }
 
 .refresh-group .oval {
-  position: absolute;
   width: 34.72px;
   height: 35.48px;
 
@@ -333,13 +290,11 @@
 }
 
 .refresh-group .refresh {
-  position: absolute;
   width: 21px;
   height: 21px;
 }
 
 .refresh-group .shape {
-  position: absolute;
   width: 13.79px;
   height: 19.3px;
 
@@ -347,7 +302,6 @@
 }
 
 .refresh-group .path {
-  position: absolute;
   width: 10.34px;
   height: 13.39px;
 
@@ -355,7 +309,6 @@
 }
 
 .refresh-group .path {
-  position: absolute;
   width: 10.34px;
   height: 13.39px;
 
@@ -363,19 +316,16 @@
 }
 
 .refresh-group .shape {
-  position: absolute;
   width: 20.43px;
   height: 20.87px;
 }
 
-.share-group {
-  position: absolute;
+.filter-group {
   width: 34.72px;
   height: 35.48px;
 }
 
-.share-group .oval {
-  position: absolute;
+.filter-group .oval {
   width: 34.72px;
   height: 35.48px;
 
@@ -383,24 +333,21 @@
   box-shadow: 0px 2px 18px rgba(0, 0, 0, 0.186481);
 }
 
-.share-group .line {
-  position: absolute;
+.filter-group .line {
   width: 4.6px;
   height: 2px;
 
   border: 2px solid #EDEDED;
 }
 
-.share-group .line {
-  position: absolute;
+.filter-group .line {
   width: 12.26px;
   height: 2px;
 
   border: 2px solid #EDEDED;
 }
 
-.share-group .line {
-  position: absolute;
+.filter-group .line {
   width: 19.91px;
   height: 2px;
 
