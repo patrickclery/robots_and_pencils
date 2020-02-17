@@ -4,12 +4,12 @@ import LinkIcon from '../LinkIcon'
 
 function Flight({data: {attributes, links}}) {
 
-  const {rocketName, rocketType, localLaunchedAt, details, referenceNumber} = attributes;
+  const {rocketName, rocketType, details, referenceNumber} = attributes;
   const {articleLink, redditCampaign} = links;
 
   return (
     <div className="flight__grid-row">
-      <div className="flight__grid-cell flight__grid-cell--badge"></div>
+      <div className="flight__grid-cell flight__grid-cell--badge">&nbsp;</div>
       <div className="flight__grid-cell">{rocketName}</div>
       <div className="flight__grid-cell">{rocketType}</div>
       <div className="flight__grid-cell">2020-02-02</div>
