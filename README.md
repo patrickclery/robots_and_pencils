@@ -1,3 +1,26 @@
+## Instructions to install/run the app
+
+#### Clone the project:
+`git clone https://github.com/patrickclery/robots_and_pencils.git`
+
+#### Install the gems
+`cd robots_and_pencils && bundle install`
+
+#### Create and populate the database with seed data
+`rake db:create db:schema:load db:seed`
+
+#### Install the front-end prerequisites
+
+`cd client && npm install && cd ..`
+
+#### Start the rails server in a separate terminal window
+`rails s`
+
+#### Start the node server in a separate terminal window
+`npm run start-js`
+
+---
+
 ## Robots & Pencils Fullstack Developer Assessment
 
 ---
