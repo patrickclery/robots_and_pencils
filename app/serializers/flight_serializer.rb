@@ -6,7 +6,7 @@ class FlightSerializer
             :id,
             :is_reused,
             :launch_successful,
-            :local_launched_at,
+            :launched_at,
             :rocket_name,
             :rocket_type,
             :reference_number

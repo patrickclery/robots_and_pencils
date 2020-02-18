@@ -24,7 +24,8 @@ SQL
   attribute :is_reused, :boolean
   attribute :launch_successful, :boolean
   attribute :links, :json
-  attribute :local_launched_at, :datetime
+  attribute :launched_at, :datetime
+  attribute :local_utc_offset, :string
   attribute :reference_number, :integer
 
   # All values are required, and "reference_number" must be unique
@@ -32,7 +33,8 @@ SQL
   validates :is_reused, default: false, inclusion: [true,false]
   validates :launch_successful, inclusion: [true,false]
   validates :links, presence: true
-  validates :local_launched_at, presence: true
+  validates :launched_at, presence: true
+  validates :local_utc_offset, presence: true
   validates :reference_number, presence: true, uniqueness: true
   validates :rocket, presence: true
 
