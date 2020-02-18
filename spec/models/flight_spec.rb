@@ -49,7 +49,7 @@ RSpec.describe Flight, type: :model do
     it { should have_db_column(:launch_successful).of_type(:boolean).with_options(null: false) }
     it { should have_db_column(:is_reused).of_type(:boolean).with_options(null: false) }
     # We only need the local launch time, and from that we can infer UTC time
-    it { should have_db_column(:local_launched_at).of_type(:datetime).with_options(null: false) }
+    it { should have_db_column(:launched_at).of_type(:datetime).with_options(null: false) }
 
     # "links" includes:
     #  - mission_patch* (this is where "a" is represented)
@@ -67,7 +67,7 @@ RSpec.describe Flight, type: :model do
     it { should validate_inclusion_of(:is_reused).in_array([true, false]).presence }
     it { should validate_inclusion_of(:launch_successful).in_array([true, false]).presence }
     it { should validate_presence_of(:links) }
-    it { should validate_presence_of(:local_launched_at) }
+    it { should validate_presence_of(:launched_at) }
     it { should validate_presence_of(:rocket) }
     it { should validate_uniqueness_of(:reference_number).presence }
     it { should_not validate_presence_of(:details) }

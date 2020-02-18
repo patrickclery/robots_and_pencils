@@ -1,5 +1,5 @@
 RSpec.describe ImportFlightData, type: :service do
-  subject { described_class.call(flight_data) }
+  subject(:import_flight_data) { described_class.call(flight_data) }
 
   # Taken from the first item in seed-data.json
   let!(:raw_json) {
@@ -105,10 +105,10 @@ RSpec.describe ImportFlightData, type: :service do
         "links":                   {
           "mission_patch":       "https://images2.imgbox.com/40/e3/GypSkayF_o.png",
           "mission_patch_small": "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png",
-          "reddit_campaign":     null,
-          "reddit_launch":       null,
-          "reddit_recovery":     null,
-          "reddit_media":        null,
+          "reddit_campaign":     "https://www.reddit.com/r/spacex/comments/4gyh8z",
+          "reddit_launch":       "https://www.reddit.com/r/spacex/comments/4htenu",
+          "reddit_recovery":     "https://www.reddit.com/r/spacex/comments/4ihp1p",
+          "reddit_media":        "https://www.reddit.com/r/spacex/comments/4htg2g",
           "presskit":            null,
           "article_link":        "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html",
           "wikipedia":           "https://en.wikipedia.org/wiki/DemoSat",
@@ -132,6 +132,37 @@ JSON
   it { expect(described_class).to respond_to(:call) }
   it { expect { subject }.to change { Flight.count }.by(1) }
   it { expect { subject }.to change { Rocket.count }.by(1) }
+
+  context "after import" do
+    before { import_flight_data }
+    subject(:resulting_flight) { Flight.find_by_reference_number(flight_data["flight_number"]) }
+    let(:attributes) {
+      {
+        reference_number:  1,
+        details:           "Engine failure at 33 seconds and loss of vehicle",
+        launch_successful: false,
+        is_reused:         false,
+        launched_at:       Time.parse("2006-03-24T22:30:00.000Z"),
+        local_utc_offset:   "+12:00",
+        links:             {
+                             mission_patch:       "https://images2.imgbox.com/40/e3/GypSkayF_o.png",
+                             mission_patch_small: "https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png",
+                             reddit_campaign:     "https://www.reddit.com/r/spacex/comments/4gyh8z",
+                             reddit_launch:       "https://www.reddit.com/r/spacex/comments/4htenu",
+                             reddit_recovery:     "https://www.reddit.com/r/spacex/comments/4ihp1p",
+                             reddit_media:        "https://www.reddit.com/r/spacex/comments/4htg2g",
+                             article_link:        "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html"
+                           }.stringify_keys,
+      }
+    }
+    it { should have_attributes(details: attributes[:details]) }
+    it { should have_attributes(links: attributes[:links]) }
+    it { should have_attributes(launched_at: attributes[:launched_at]) }
+    it { should have_attributes(local_utc_offset: attributes[:local_utc_offset]) }
+    it { should have_attributes(is_reused: attributes[:is_reused]) }
+    it { should have_attributes(launch_successful: attributes[:launch_successful]) }
+    it { should have_attributes(reference_number: attributes[:reference_number]) }
+  end
 
   # We don't want duplicate flights or rockets
   context 'When a flight already exists' do

@@ -4,7 +4,8 @@ FactoryBot.define do
     details { Faker::Lorem.sentence }
     launch_successful { Faker::Boolean.boolean }
     is_reused { Faker::Boolean.boolean }
-    local_launched_at { Faker::Time.between_dates(from: 5.years.ago, to: 3.years.ago) }
+    launched_at { Faker::Time.between_dates(from: 5.years.ago, to: 3.years.ago) }
+    local_utc_offset { "#{["+","-"].sample}#{rand(0..12)}:00" }
 
     links {
       {

@@ -26,7 +26,8 @@ ActiveRecord::Schema.define(version: 2020_02_04_203218) do
     t.text "details", null: true
     t.boolean "launch_successful", null: false
     t.boolean "is_reused", null: false
-    t.datetime "local_launched_at", null: false
+    t.datetime "launched_at", null: false
+    t.string "local_utc_offset", null: false
     t.json "links", null: false
     t.bigint "rocket_id", null: false
     t.index ["rocket_id"], name: "index_flights_on_rocket_id"
