@@ -27,7 +27,7 @@ RSpec.describe FlightsController, type: :controller do
                                                                    "id",
                                                                    "isReused",
                                                                    "launchSuccessful",
-                                                                   "localLaunchedAt",
+                                                                   "launchedAt",
                                                                    "referenceNumber",
                                                                    "rocketName",
                                                                    "rocketType" }

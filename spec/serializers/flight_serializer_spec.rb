@@ -7,10 +7,12 @@ RSpec.describe FlightSerializer, type: :serializer do
     subject { JSON.parse(flight_as_json)["data"]["attributes"] }
 
     it { expect(subject.keys).to contain_exactly "details",
+                                                 "formattedDate",
                                                  "id",
                                                  "isReused",
                                                  "launchSuccessful",
-                                                 "localLaunchedAt",
+                                                 "launchedAt",
+                                                 "localUtcOffset",
                                                  "referenceNumber",
                                                  "rocketName",
                                                  "rocketType" }
