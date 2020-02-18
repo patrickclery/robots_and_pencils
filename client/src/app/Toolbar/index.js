@@ -1,20 +1,22 @@
 import React, {useState} from 'react'
 import './index.css'
 import RefreshIcon from "../RefreshIcon"
+import Checkbox from "../Checkbox";
 
-const Checkbox = ({name, checked = false, onChange}) => {
-  return (
-    <input type="checkbox" name={name} checked={checked} onChange={onChange}/>
-  )
-};
-
-const Toolbar = () => {
-
+const Toolbar = ({refreshData}) => {
   const [checkedItems, setCheckedItems] = useState({
                                                      withRedditLinks:        false,
                                                      withSuccessfulLaunches: false,
                                                      withReuses:             false
                                                    });
+
+  const handleChange = (event) => {
+    setCheckedItems({
+                      ...checkedItems,
+                      [event.target.name]: event.target.checked
+                    });
+    refreshData
+  };
 
   return (
     <div className="toolbar">
@@ -29,13 +31,13 @@ const Toolbar = () => {
       <div className="toolbar-col toolbar-col--filter">
         <Checkbox
           name="withReuses"
-          onChange={handleChange}/> Reused
+          handleChange={handleChange}/> Reused
 
       </div>
       <div className="toolbar-col toolbar-col--filter">
         <Checkbox
           name="withRedditLinks"
-          onChange={handleChange}/> With Reddit
+          handleChange={handleChange}/> With Reddit
       </div>
     </div>
   )
