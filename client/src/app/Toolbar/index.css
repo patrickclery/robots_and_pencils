@@ -1,0 +1,33 @@
+.toolbar {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.453012);
+    box-sizing: border-box;
+    box-shadow: 0px 2px 130px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    grid-area: toolbar;
+    grid-template-areas:
+            "refresh-button"
+            "filter"
+            "filter"
+            "filter";
+    grid-template-columns: minmax(100px, auto) repeat(3, 1fr);
+}
+
+.toolbar-col {
+    display: grid;
+}
+
+.toolbar-col--filter {
+    font-style: normal;
+    font-weight: normal;
+    display: grid;
+    font-family: Geomanist;
+    font-size: 15px;
+    line-height: 18px;
+    color: #fff;
+    grid-area: filter;
+}
+
+.toolbar-col--refresh {
+    grid-area: refresh-button;
+}

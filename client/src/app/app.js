@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Flight from './Flight';
 import Header from './Header';
-import './Toolbar/index.css';
 import '../scss/styles.css';
 import RefreshIcon from "./RefreshIcon";
 
@@ -41,35 +40,42 @@ function App() {
   }, [filters]);
 
   return (
-    <div className="app--space-theme">
-      <div className="heading--h1">
-        SpaceX Launches
-      </div>
-      <div className="toolbar">
-        <div className="toolbar-col toolbar-col--refresh">
-          <RefreshIcon/>
+    <div className="app--space-x">
+      <div className="container">
+        <div className="headline">
+          SpaceX Launches
         </div>
-        <div className="toolbar-col toolbar-col--filter">
-          <input type="checkbox" name="withSuccessfulLaunches" defaultChecked={false}
-                 onChange={handleChange}/> Land Success
-        </div>
-        <div className="toolbar-col toolbar-col--filter">
-          <input type="checkbox" name="withReuses" defaultChecked={false}
-                 onChange={handleChange}/> Reused
+        <div className="toolbar">
+          <div className="toolbar-col--refresh">
+            <RefreshIcon/>
+          </div>
+          <div className="toolbar-col--filter">
+            <label id="withSuccessfulLaunches">
+              <input type="checkbox" name="withSuccessfulLaunches" defaultChecked={false}
+                     onChange={handleChange}/> Land Success
+            </label>
+          </div>
 
+          <div className="toolbar-col--filter">
+            <label id="withReuses">
+              <input type="checkbox" name="withReuses" defaultChecked={false}
+                     onChange={handleChange}/> Reused
+            </label>
+          </div>
+          <div className="toolbar-col--filter">
+            <label id="withRedditLinks">
+            <input type="checkbox" name="withRedditLinks" defaultChecked={false}
+                   onChange={handleChange}/> With Reddit
+            </label>
+          </div>
         </div>
-        <div className="toolbar-col toolbar-col--filter">
-          <input type="checkbox" name="withRedditLinks" defaultChecked={false}
-                 onChange={handleChange}/> With Reddit
+        <div className="flights">
+          <Header/>
+          {flights.map((flight) =>
+                         <Flight data={flight}
+                                 key={flight.id}/>
+          )}
         </div>
-      </div>
-      <div className="flights__grid">
-        <Header/>
-        {flights.map((flight) =>
-                       <Flight data={flight}
-                               key={flight.id}/>
-        )}
-        <div className="flights__line">&nbsp;</div>
       </div>
     </div>
   )

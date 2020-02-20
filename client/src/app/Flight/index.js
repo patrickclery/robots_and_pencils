@@ -1,5 +1,4 @@
 import React from 'react'
-import './index.css'
 import LinkIcon from '../LinkIcon'
 import placeholder from './images/placeholder.png'
 
@@ -9,16 +8,16 @@ function Flight({data: {attributes, links}}) {
   const {missionPatchSmall, articleLink, redditCampaign, redditLaunch, redditRecovery, redditMedia} = links;
 
   return (
-    <div className="flight__grid-row">
-      <div className="flight__grid-cell flight__grid-cell--badge">
+    <div className="flight-row">
+      <div className="flight-cell">
         <img src={missionPatchSmall ? missionPatchSmall : placeholder} width="50" height="50" />
       </div>
-      <div className="flight__grid-cell">{rocketName}</div>
-      <div className="flight__grid-cell">{rocketType}</div>
-      <div className="flight__grid-cell">{formattedDate}</div>
-      <div className="flight__grid-cell">{details}</div>
-      <div className="flight__grid-cell flight__grid-cell--referenceNumber">{referenceNumber}</div>
-      <div className="flight__grid-cell">
+      <div className="flight-cell">{rocketName}</div>
+      <div className="flight-cell">{rocketType}</div>
+      <div className="flight-cell">{formattedDate}</div>
+      <div className="flight-cell">{details}</div>
+      <div className="flight-cell flight-cell--referenceNumber">{referenceNumber}</div>
+      <div className="flight-cell">
         {articleLink && <a href={articleLink}>
           <LinkIcon color="#00f"/>
         </a>}
