@@ -1,0 +1,21 @@
+
+.flight-row {
+    grid-template-columns: inherit;
+    display: grid;
+}
+
+.flight-cell {
+    padding: 15px;
+    font-style: normal;
+    font-weight: normal;
+    display: grid;
+    font-family: Geomanist;
+    font-size: 15px;
+    line-height: 18px;
+    color: #444444;
+}
+
+
+.flight-cell--referenceNumber {
+    line-height: 15px;
+}

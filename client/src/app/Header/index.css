@@ -1,0 +1,19 @@
+
+.flights__headers {
+    background: rgba(255, 255, 255, 0.843495);
+    box-shadow: 0px 2px 10px rgba(8, 13, 35, 0.366027);
+    display: grid;
+    grid-template-columns: 100px 100px 100px 100px minmax(100px, auto) 100px 100px;
+}
+
+.flights__headers__th {
+    font-family: Geomanist;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 17px;
+    color: #043D67;
+    display: grid;
+    align-items: center;
+    padding: 5px;
+}
