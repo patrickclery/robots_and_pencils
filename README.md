@@ -17,7 +17,10 @@
 `rails s`
 
 #### Start the node server in a separate terminal window
-`npm run start-js`
+`PORT=3001 npm run start-js`
+
+#### Open the app in your browser
+Go to http://localhost:3001/
 
 ---
 
