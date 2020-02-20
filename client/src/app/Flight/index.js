@@ -1,5 +1,4 @@
 import React from 'react'
-import './index.css'
 import LinkIcon from '../LinkIcon'
 import placeholder from './images/placeholder.png'
 

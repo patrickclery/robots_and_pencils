@@ -17,8 +17,8 @@
   font-size: 64px;
   grid-area: headline;
   line-height: 75px;
-  padding: 25px 0;
   text-align: center;
+  margin: 20px 0;
 }
 
 .toolbar {
@@ -29,7 +29,7 @@
   box-shadow: 0px 2px 130px rgba(0, 0, 0, 0.5);
   border-radius: 8px 8px 0 0;
   grid-area: toolbar;
-  grid-template-columns: minmax(100px, auto) repeat(3, 200px);
+  grid-template-columns: auto repeat(3, max-content);
 }
 
 
@@ -41,6 +41,7 @@
   font-style: normal;
   font-weight: normal;
   line-height: 18px;
+  padding: 15px;
 }
 
 .toolbar-col--refresh {
@@ -48,12 +49,8 @@
 }
 
 .flights {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.84) 32.59%, #C2C2C2 100%);
-  border-radius: 8px;
-  box-shadow: 0 2px 130px rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
   grid-area: flights;
-  grid-template-columns: 1fr 1fr  1fr  1fr 300px 1fr 1fr ;
+  grid-template-columns: 75px 120px 120px 120px 300px 120px 120px ;
   margin: 0 auto;
   width: 960px;
 }
@@ -62,20 +59,46 @@
   background: rgba(255, 255, 255, 0.843495);
   box-shadow: 0px 2px 10px rgba(8, 13, 35, 0.366027);
   display: grid;
-  padding: 15px;
   grid-template-columns: inherit;
+  padding: 15px;
 }
 
 .flights__headers__th {
+  color: #043D67;
   font-family: Geomanist;
+  font-size: 17px;
   font-style: normal;
   font-weight: normal;
-  font-size: 17px;
   line-height: 17px;
-  color: #043D67;
-  grid-gap: 20px;
-
-  display: grid;
-  padding: 5px;
   white-space: nowrap;
+}
+
+
+.flight-row {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.84) 32.59%, #C2C2C2 100%);
+  border-radius: 8px;
+  box-shadow: 0 2px 130px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  display: grid;
+  grid-row-gap: 20px;
+  grid-template-columns: inherit;
+  margin: 10px 0;
+  padding: 15px 0;
+}
+
+.flight-cell {
+  color: #444444;
+  display: grid;
+  font-family: Geomanist;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 18px;
+  padding: 15px;
+}
+
+
+.flight-cell--referenceNumber {
+  line-height: 15px;
+  display: grid;
 }
