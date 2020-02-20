@@ -50,16 +50,23 @@ function App() {
             <RefreshIcon/>
           </div>
           <div className="toolbar-col--filter">
-            <input type="checkbox" name="withSuccessfulLaunches" defaultChecked={false}
-                   onChange={handleChange}/> Land Success
+            <label id="withSuccessfulLaunches">
+              <input type="checkbox" name="withSuccessfulLaunches" defaultChecked={false}
+                     onChange={handleChange}/> Land Success
+            </label>
+          </div>
+
+          <div className="toolbar-col--filter">
+            <label id="withReuses">
+              <input type="checkbox" name="withReuses" defaultChecked={false}
+                     onChange={handleChange}/> Reused
+            </label>
           </div>
           <div className="toolbar-col--filter">
-            <input type="checkbox" name="withReuses" defaultChecked={false}
-                   onChange={handleChange}/> Reused
-          </div>
-          <div className="toolbar-col--filter">
+            <label id="withRedditLinks">
             <input type="checkbox" name="withRedditLinks" defaultChecked={false}
                    onChange={handleChange}/> With Reddit
+            </label>
           </div>
         </div>
         <div className="flights">
@@ -68,7 +75,6 @@ function App() {
                          <Flight data={flight}
                                  key={flight.id}/>
           )}
-          <div className="flights__line">&nbsp;</div>
         </div>
       </div>
     </div>
