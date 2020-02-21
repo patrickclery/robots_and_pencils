@@ -14,7 +14,7 @@ module Api
       private
 
       def filter_params
-        params.permit(:with_reddit_links)
+        params.permit(:with_reddit)
         params.permit(:with_successful_launches)
         params.permit(:with_reuses)
       end
