@@ -23,10 +23,12 @@ RSpec.describe Api::V1::FlightsController, type: :controller do
       describe "a sample flight from the JSON data" do
         subject(:json_flight) { JSON.parse(get_flights_lists.body)["data"].sample }
         it { expect(subject["attributes"].keys).to contain_exactly "details",
+                                                                   "formattedDate",
                                                                    "id",
                                                                    "isReused",
                                                                    "launchSuccessful",
                                                                    "launchedAt",
+                                                                   "localUtcOffset",
                                                                    "referenceNumber",
                                                                    "rocketName",
                                                                    "rocketType" }
