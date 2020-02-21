@@ -15,7 +15,7 @@ function App() {
 
   // This takes the filters as params, then returns a JSON of the flights
   const refreshFlights = () => {
-    let url = "http://localhost:3000/flights?";
+    let url = "http://localhost:3000/api/v1/flights?";
     url = `${url}with_reuses=${encodeURI(filters.withReuses)}&`;
     url = `${url}with_reddit=${encodeURI(filters.withRedditLinks)}&`;
     url = `${url}with_successful_launches=${encodeURI(filters.withSuccessfulLaunches)}`;
