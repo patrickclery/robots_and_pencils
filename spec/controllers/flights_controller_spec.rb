@@ -1,4 +1,4 @@
-RSpec.describe FlightsController, type: :controller do
+RSpec.describe Api::V1::FlightsController, type: :controller do
 
   describe "GET #index" do
     # Create a list of 12 flights

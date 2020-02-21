@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-
-  resources :flights
+  namespace :api do
+    namespace :v1 do
+      resources :flights
+    end
+  end
 
 end
