@@ -46,23 +46,23 @@ function App() {
           SpaceX Launches
         </div>
         <div className="toolbar">
-          <div className="toolbar-col--refresh">
+          <div className="toolbar__refresh-button" onClick={refreshFlights}>
             <RefreshIcon/>
           </div>
-          <div className="toolbar-col--filter">
+          <div className="toolbar__filter-checkbox">
             <label id="withSuccessfulLaunches">
               <input type="checkbox" name="withSuccessfulLaunches" defaultChecked={false}
                      onChange={handleChange}/> Land Success
             </label>
           </div>
 
-          <div className="toolbar-col--filter">
+          <div className="toolbar__filter-checkbox">
             <label id="withReuses">
               <input type="checkbox" name="withReuses" defaultChecked={false}
                      onChange={handleChange}/> Reused
             </label>
           </div>
-          <div className="toolbar-col--filter">
+          <div className="toolbar__filter-checkbox">
             <label id="withRedditLinks">
             <input type="checkbox" name="withRedditLinks" defaultChecked={false}
                    onChange={handleChange}/> With Reddit

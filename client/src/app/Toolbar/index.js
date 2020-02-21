@@ -20,21 +20,21 @@ const Toolbar = ({refreshData}) => {
 
   return (
     <div className="toolbar">
-      <div className="toolbar-col toolbar-col--refresh">
+      <div className="toolbar-col toolbar__refresh-button">
         <RefreshIcon/>
       </div>
-      <div className="toolbar-col toolbar-col--filter">
+      <div className="toolbar-col toolbar__filter-checkbox">
         <Checkbox
           name="withSuccessfulLaunches"
           onChange={handleChange}/> Land Success
       </div>
-      <div className="toolbar-col toolbar-col--filter">
+      <div className="toolbar-col toolbar__filter-checkbox">
         <Checkbox
           name="withReuses"
           handleChange={handleChange}/> Reused
 
       </div>
-      <div className="toolbar-col toolbar-col--filter">
+      <div className="toolbar-col toolbar__filter-checkbox">
         <Checkbox
           name="withRedditLinks"
           handleChange={handleChange}/> With Reddit

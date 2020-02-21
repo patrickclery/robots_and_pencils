@@ -17,7 +17,7 @@
     display: grid;
 }
 
-.toolbar-col--filter {
+.toolbar__filter-checkbox {
     font-style: normal;
     font-weight: normal;
     display: grid;
@@ -28,6 +28,10 @@
     grid-area: filter;
 }
 
-.toolbar-col--refresh {
+.toolbar__refresh-button {
     grid-area: refresh-button;
+}
+.toolbar__refresh-button:hover {
+    grid-area: refresh-button;
+    cursor: pointer;
 }
