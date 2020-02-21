@@ -2,6 +2,8 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 
+require 'support/load_react_app'
+require 'support/capybara'
 require 'support/simplecov'
 require 'support/rspec'
 require 'support/shoulda_matchers'

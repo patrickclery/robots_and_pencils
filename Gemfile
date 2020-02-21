@@ -26,6 +26,12 @@ group :test do
   gem 'rubocop'
   gem 'rubocop-rspec'
   gem 'shoulda-matchers'
+
+  gem "capybara"
+  gem "chromedriver-helper", "1.0.0"
+  gem "puffing-billy"
+  gem "selenium-webdriver"
+  gem 'sinatra', '2.0.0.beta2' # https://github.com/sinatra/sinatra/issues/1055
 end
 
 group :development do
