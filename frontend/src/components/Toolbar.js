@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './index.css'
-import RefreshIcon from "../RefreshIcon"
-import Checkbox from "../Checkbox";
+import RefreshIcon from '../components/RefreshIcon'
+import Checkbox from '../components/Checkbox';
 
 const Toolbar = ({refreshData}) => {
   const [checkedItems, setCheckedItems] = useState({

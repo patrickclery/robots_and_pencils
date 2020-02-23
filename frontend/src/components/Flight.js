@@ -1,6 +1,5 @@
 import React from 'react'
-import LinkIcon from '../LinkIcon'
-import placeholder from './images/placeholder.png'
+import LinkIcon from '../components/LinkIcon'
 
 function Flight({data: {attributes, links}}) {
 
@@ -10,7 +9,7 @@ function Flight({data: {attributes, links}}) {
   return (
     <div className="flight-row">
       <div className="flight-cell">
-        <img src={missionPatchSmall ? missionPatchSmall : placeholder} width="50" height="50" />
+        <img src={missionPatchSmall} width="50" height="50" />
       </div>
       <div className="flight-cell">{rocketName}</div>
       <div className="flight-cell">{rocketType}</div>

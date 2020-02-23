@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import Flight from './Flight';
-import Header from './Header';
-import '../scss/styles.css';
-import RefreshIcon from "./RefreshIcon";
+import Flight from '../components/Flight';
+import Header from '../components/Header';
+import './App.css';
+import RefreshIcon from '../components/RefreshIcon';
 
 function App() {
 
