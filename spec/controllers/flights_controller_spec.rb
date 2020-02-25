@@ -6,10 +6,7 @@ RSpec.describe Api::V1::FlightsController, type: :controller do
 
     context "without filters" do
       # Stub it to not actually use the database
-      subject(:get_flights_lists) {
-        allow(Flight).to receive(:all).and_return(flights)
-        get :index
-      }
+      subject(:get_flights_lists) { get :index }
       # Ensure the basic request worked
       it { should be_successful }
       it { expect(subject.content_type).to eq("application/json; charset=utf-8") }
@@ -24,10 +21,12 @@ RSpec.describe Api::V1::FlightsController, type: :controller do
       describe "a sample flight from the JSON data" do
         subject(:json_flight) { JSON.parse(get_flights_lists.body)["data"].sample }
         it { expect(subject["attributes"].keys).to contain_exactly "details",
+                                                                   "formattedDate",
                                                                    "id",
                                                                    "isReused",
                                                                    "launchSuccessful",
                                                                    "launchedAt",
+                                                                   "localUtcOffset",
                                                                    "referenceNumber",
                                                                    "rocketName",
                                                                    "rocketType" }
@@ -46,7 +45,7 @@ RSpec.describe Api::V1::FlightsController, type: :controller do
       subject {
         # Stub this to return filtered flights only - this is tested in the unit test for Flight
         allow(Flight).to receive(:filter_reddit_links).and_return(flights_with_reddit)
-        get :index, params: { with_reddit_links: 1 }
+        get :index, params: { with_reddit: 1 }
         JSON.parse(response.body)["data"]
       }
 
