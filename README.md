@@ -1,3 +1,5 @@
+![RSpec](https://github.com/patrickclery/spacex/workflows/Ruby/badge.svg)
+
 ![screenshot](https://user-images.githubusercontent.com/25733135/74923494-bfb09d00-5385-11ea-815f-969f222a24a2.jpg)
 
 ## Instructions to install/run the app
