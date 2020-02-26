@@ -14,8 +14,7 @@ gem 'puma', '~> 4.3.3'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'fast_jsonapi'
-gem 'webpacker', '~> 4.x'
-gem 'turbolinks', '~> 5.2.0'
+gem 'webpacker'
 gem 'react-rails'
 
 group :test do
