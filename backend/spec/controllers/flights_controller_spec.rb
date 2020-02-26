@@ -6,9 +6,7 @@ RSpec.describe Api::V1::FlightsController, type: :controller do
 
     context "without filters" do
       # Stub it to not actually use the database
-      subject(:get_flights_lists) {
-        get :index
-      }
+      subject(:get_flights_lists) { get :index }
       # Ensure the basic request worked
       it { should be_successful }
       it { expect(subject.content_type).to eq("application/json; charset=utf-8") }
