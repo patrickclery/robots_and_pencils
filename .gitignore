@@ -16,10 +16,6 @@
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
-.byebug_history
-
-# Ignore master key for decrypting credentials and more.
-/config/master.key
 
 # Project exclude paths
 /log/
@@ -28,9 +24,16 @@
 /coverage/
 /.rspec_status
 
-/public/packs
-/public/packs-test
-/node_modules
+.ruby-version
+.ruby-gemset
+
+# unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+.rvmrc
+
+# Ignore node_modules
+node_modules/
+
+# Ignore yarn files
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
