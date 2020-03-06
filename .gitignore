@@ -24,6 +24,7 @@
 /coverage/
 /.rspec_status
 
+Gemfile.lock
 .ruby-version
 .ruby-gemset
 
