@@ -1,5 +1,5 @@
 import React from 'react'
-import LinkIcon from '../components/LinkIcon'
+import LinkIcon from './LinkIcon'
 
 function Flight({data: {attributes, links}}) {
 
