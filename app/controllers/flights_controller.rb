@@ -1,6 +1,6 @@
-class FlightsController < ApplicationController
+class FlightsController < ActionController::Base
   def index
     @flights = Flight.all
-    render component: 'App', props: { flights: @flights }
+    render 'flights/index'
   end
 end
