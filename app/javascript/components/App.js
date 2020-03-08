@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Flight from './Flight';
 import Header from './Header';
-import './App.css';
+import '../style/App.css';
 import RefreshIcon from './RefreshIcon';
 
 function App() {
