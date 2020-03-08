@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import './index.css'
 import RefreshIcon from '../components/RefreshIcon'
 import Checkbox from '../components/Checkbox';
 
