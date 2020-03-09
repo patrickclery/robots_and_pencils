@@ -16,7 +16,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'fast_jsonapi'
 gem 'webpacker', '~> 4.x'
 gem 'turbolinks', '~> 5.2.0'
-gem 'react-rails'
+gem 'react_on_rails'
+gem 'foreman'
 
 group :test do
   gem 'factory_bot'

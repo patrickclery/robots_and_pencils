@@ -2,24 +2,16 @@
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.8.7",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
     "@rails/webpacker": "^4.2.2",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "css-loader": "^3.4.2",
-    "core-js": "^3.6.4",
-    "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "^3.4.0",
-    "react_ujs": "^2.6.1",
-    "regenerator-runtime": "^0.13.3",
-    "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
+    "react_ujs": "^2.6.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
