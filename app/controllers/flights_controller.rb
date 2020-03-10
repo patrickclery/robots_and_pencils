@@ -1,6 +1,6 @@
 class FlightsController < ActionController::Base
   def index
     @flights = Flight.all
-    render :index, layout: 'application', prerender: true
+    render component: 'App', layout: 'application', prerender: false
   end
 end
