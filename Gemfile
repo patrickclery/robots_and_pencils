@@ -14,7 +14,9 @@ gem 'puma', '~> 4.3.3'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'fast_jsonapi'
-gem 'rack-cors'
+gem 'webpacker', '~> 4.x'
+gem 'foreman'
+gem 'react-rails'
 
 group :test do
   gem 'factory_bot'
