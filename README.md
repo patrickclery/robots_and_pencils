@@ -5,26 +5,19 @@
 ## Instructions to install/run the app
 
 #### Clone the project:
-`git clone https://github.com/patrickclery/robots_and_pencils.git`
+`git clone https://github.com/patrickclery/spacex.git`
 
 #### Install the gems
-`cd robots_and_pencils && bundle install`
+`cd spacex && bundle install && yarn install`
 
 #### Create and populate the database with seed data
 `rake db:create db:schema:load db:seed`
 
-#### Install the front-end prerequisites
-
-`cd client && npm install && cd ..`
-
-#### Start the rails server in a separate terminal window
-`rails s`
-
-#### Start the node server in a separate terminal window
-`PORT=3001 npm run start-js`
+#### Start the rails server
+`foreman start -f Procfile.dev`
 
 #### Open the app in your browser
-Go to http://localhost:3001/
+Go to http://localhost:3000/flights
 
 ---
 
