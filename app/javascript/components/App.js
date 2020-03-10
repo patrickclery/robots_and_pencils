@@ -16,11 +16,11 @@ class App extends React.Component {
   };
 
   // This takes the filters as params, then returns a JSON of the flights
-  refreshFlights = () => {
+  refreshFlights = filters => {
     let url = "http://localhost:3000/api/v1/flights?";
-    url = `${url}with_reuses=${encodeURI(this.state.filters.withReuses)}&`;
-    url = `${url}with_reddit=${encodeURI(this.state.filters.withRedditLinks)}&`;
-    url = `${url}with_successful_launches=${encodeURI(this.state.filters.withSuccessfulLaunches)}`;
+    url = `${url}with_reuses=${encodeURI(filters.withReuses)}&`;
+    url = `${url}with_reddit=${encodeURI(filters.withRedditLinks)}&`;
+    url = `${url}with_successful_launches=${encodeURI(filters.withSuccessfulLaunches)}`;
 
     fetch(url)
       .then(response => {
@@ -34,11 +34,12 @@ class App extends React.Component {
 
   handleChange = event => {
     let result = {[event.target.name]: (event.target.checked ? 1 : 0)};
-    this.setState({filters: {...this.filters, ...result}});
+    this.setState({filters: {...this.state.filters, ...result}});
+    this.refreshFlights({...this.state.filters, ...result});
   };
 
   componentDidMount() {
-    this.refreshFlights();
+    this.refreshFlights(this.state.filters);
   }
 
   render() {
