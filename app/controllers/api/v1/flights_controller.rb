@@ -1,6 +1,6 @@
 module Api
   module V1
-    class Api::V1::FlightsController < ActionController::API
+    class Api::V1::FlightsController < Api::V1::ApplicationController
 
       def index
         @flights = Flight.includes(:rocket).order(launched_at: :desc).all
