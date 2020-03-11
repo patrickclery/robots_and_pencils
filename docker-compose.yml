@@ -1,0 +1,62 @@
+version: '3'
+networks:
+  spacex:
+    driver: bridge
+volumes:
+  app:
+  aptcache:
+  bundle:
+  db:
+    driver: local
+
+services:
+  aptcache:
+    container_name: aptcache
+    hostname: aptcache
+    image: sameersbn/apt-cacher-ng:3.1-2
+    ports:
+      - 3142:3142
+    restart: always
+    volumes:
+      - aptcache:/var/cache/aptcache
+  db:
+    command: postgres
+    container_name: db
+    depends_on:
+      - aptcache
+    environment:
+      POSTGRES_DB: $POSTGRES_DB
+      POSTGRES_HOST: $POSTGRES_HOST
+      POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+      POSTGRES_USER: $POSTGRES_USER
+      PGDATA: $PGDATA
+    env_file: ./config/docker/.env
+    image: postgres:11.1
+    links:
+      - aptcache
+    networks:
+      spacex:
+        aliases:
+          - postgres
+          - postgresql
+          - database
+    ports:
+      - 5432:5432
+    restart: always
+    volumes:
+      - db:$PGDATA
+  app:
+    build:
+      args:
+        github_token: $GITHUB_PERSONAL_ACCESS_TOKEN
+        bundle_path: $BUNDLE_PATH
+      context: .
+    env_file: ./config/docker/.env
+    networks:
+      spacex:
+        aliases:
+          - backend
+          - rails
+    volumes:
+      - app:/app
+      - bundle:/usr/local/bundle
