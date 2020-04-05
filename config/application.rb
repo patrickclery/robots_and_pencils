@@ -19,7 +19,7 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module RobotsAndPencils
+module Spacex
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
@@ -29,13 +29,15 @@ module RobotsAndPencils
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    # Only loads a smaller set of middleware suitable for API only apps.
-    # Middleware like session, flash, cookies can be added back manually.
-    # Skip views, helpers and assets when generating a new resource.
-    config.api_only = true
-
-    config.react.jsx_transform_options = {
-      optional: ['es7.classProperties']
+    config.react.server_renderer_pool_size  ||= 1  # ExecJS doesn't allow more than one on MRI
+    config.react.server_renderer_timeout    ||= 20 # seconds
+    config.react.server_renderer = React::ServerRendering::BundleRenderer
+    config.react.server_renderer_options = {
+      files: ["server_rendering.js"],       # files to load for prerendering
+      replay_console: true,                 # if true, console.* will be replayed client-side
     }
+    # Changing files matching these dirs/exts will cause the server renderer to reload:
+    config.react.server_renderer_extensions = ["jsx", "js"]
+    config.react.server_renderer_directories = ["/app/assets/javascripts"]
   end
 end
