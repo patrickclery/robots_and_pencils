@@ -5,11 +5,11 @@
 
 ## Live Demo
 
-Check it out live on Heroku: [https://spacexflights.herokuapp.com/]()
+Check it out live on Heroku: [https://spacexflights.herokuapp.com/](https://spacexflights.herokuapp.com/)
 
 ## App Spec
 
-Read the original app specification here: [ASSIGNMENT.md]()
+Read the original app specification here: [ASSIGNMENT.md](ASSIGNMENT.md)
 
 ## Getting Started
 
