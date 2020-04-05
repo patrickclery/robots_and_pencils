@@ -7,6 +7,8 @@
 
 Check it out live on Heroku: [https://spacexflights.herokuapp.com/](https://spacexflights.herokuapp.com/)
 
+![screenshot](https://user-images.githubusercontent.com/25733135/74923494-bfb09d00-5385-11ea-815f-969f222a24a2.jpg)
+
 ## App Spec
 
 Read the original app specification here: [ASSIGNMENT.md](ASSIGNMENT.md)
