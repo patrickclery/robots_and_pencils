@@ -15,24 +15,6 @@ ActiveRecord::Schema.define(version: 2020_02_04_203218) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "rockets", force: :cascade do |t|
-    t.string "reference_number", null: false, unique: true
-    t.string "name", null: false
-    t.string "type_name", null: false
-  end
-
-  create_table "flights", force: :cascade do |t|
-    t.bigint "reference_number", null: false, unique: true
-    t.text "details", null: true
-    t.boolean "launch_successful", null: false
-    t.boolean "is_reused", null: false
-    t.datetime "launched_at", null: false
-    t.string "local_utc_offset", null: false
-    t.json "links", null: false
-    t.bigint "rocket_id", null: false
-    t.index ["rocket_id"], name: "index_flights_on_rocket_id"
-  end
-
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -52,6 +34,24 @@ ActiveRecord::Schema.define(version: 2020_02_04_203218) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "flights", force: :cascade do |t|
+    t.bigint "reference_number", null: false
+    t.text "details"
+    t.boolean "launch_successful", null: false
+    t.boolean "is_reused", null: false
+    t.datetime "launched_at", null: false
+    t.string "local_utc_offset", null: false
+    t.json "links", null: false
+    t.bigint "rocket_id", null: false
+    t.index ["rocket_id"], name: "index_flights_on_rocket_id"
+  end
+
+  create_table "rockets", force: :cascade do |t|
+    t.string "reference_number", null: false
+    t.string "name", null: false
+    t.string "type_name", null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
