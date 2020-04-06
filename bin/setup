@@ -20,11 +20,6 @@ FileUtils.chdir APP_ROOT do
   system! 'gem install bundler --conservative'
   system('bundle check') || system!('bundle install')
 
-  puts "\n== Creating docker .env file from example =="
-  unless File.exist?('.env')
-    system!('cp .env.example .env')
-  end
-
   puts "\n== Preparing database =="
   system! 'bin/rails db:drop db:create db:schema:load db:seed'
 
